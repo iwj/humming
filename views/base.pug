@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    meta(charset= 'UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    meta(name='theme-color' content='#f76304')
+    block title
+      title Humming
+    block style
+      link(rel='stylesheet' href='/css/normalize.css')
+      link(rel='stylesheet' href='/css/basic.css')      
+  body
+    header
+      div(class='container')
+          a(href='/')= '首页'
+          span= ' / '
+          a(href='/help')= '帮助'
+          span= ' / '
+          if (user)
+            span= '欢迎，' + user
+            span= ' / '
+            a(href='/create')= '创建新动态'
+            span= ' / '
+            a(href='/account')= '个人中心'
+            span= ' / '
+            a(href='/signout')= '登出'
+          else
+            a(href='/signup')= '注册'
+            span= ' / '
+            a(href='/signin')= '登录'
+      
+    hr
+    block main
+      - if(message)
+        div(class='container')
+          p=message
+    footer

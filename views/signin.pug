@@ -1,0 +1,21 @@
+extends base.pug
+
+block main
+  div(class='container')
+    p=message
+    p
+      h1=req
+    h2='登录 sign in'
+    form(action='signin' method='post')
+      p
+        span='账号：'
+        input(name='username' type='text' placeholder='4个字符以上')
+      p
+        span='密码：'
+        input(name='password' type='password' placeholder='6位以上英文数字标点')
+      p
+        span='验证码'
+        input(name='captcha' type='text' placeholder='不必区分大小写')
+        img(src='/captcha')
+      p
+        input(type='submit' value='登录')

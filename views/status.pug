@@ -1,0 +1,11 @@
+extends base.pug
+
+block main
+  div(class='container')
+    - if(data !== undefined)
+      p=data.content
+      p=data.timestamp
+      p
+        a(href='/user/' + data.authorid)=data.username
+    - else
+      p='Not found this status, please check status id.'

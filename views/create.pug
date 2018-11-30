@@ -1,0 +1,14 @@
+extends base.pug
+
+block title
+  title 创建新动态
+
+block main
+  div(class='container')
+    form(method='post')
+      p
+        span='分享新动态：'
+      p
+        textarea(type='text', name='feed' style='width: 100%;height:300px')
+      p
+        input(type='submit')

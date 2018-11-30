@@ -1,0 +1,11 @@
+extends base.pug
+
+block main
+  div(class='container')
+    - for (var i = 0; i < data.length; i++)
+      p= data[i]['content']
+      p
+        a(href='/status/' + data[i]['id'])= '时间：' + new Date(data[i]['timestamp']).toLocaleString()
+      p
+        a(href='/user/' + data[i]['authorid'])= '作者：' + data[i]['username']
+      hr

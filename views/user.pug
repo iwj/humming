@@ -1,0 +1,12 @@
+extends base.pug
+
+block main
+  div(class='container')
+    h2='他的所有帖子'
+    -for(var row of rows)
+      p=row.content
+      p=row.id
+      p=row.username
+      p=row.timestamp
+      p=row.authorid
+      hr

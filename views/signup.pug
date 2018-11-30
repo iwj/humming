@@ -1,0 +1,20 @@
+extends base.pug
+
+block title
+  title= '新用户注册'
+
+block main
+  div(class='container')
+    h2='新用户注册'
+    form(action='signup' method='post')
+      p
+        span='账号：'
+        input(name='username' type='text' placeholder='4个字符以上')
+      p
+        span='邮箱：'
+        input(name='email' type='text' placeholder='选填，用于找回密码')
+      p
+        span='密码：'
+        input(name='password' type='password' placeholder='6位以上英文数字标点')
+      p
+        input(type='submit')
