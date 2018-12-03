@@ -1,55 +1,134 @@
 @charset "utf-8";
 
 body {
+  margin: 0px;
   background-color: #fafafa;
 }
 
+a {
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: #9e9e9e;
+}
+
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1rem 0;
   border: 0;
   border-top: 1px solid #eee;
 }
 
+.top-bar {
+  padding: 0.25rem 1rem;
+  background-color: #545652;
+  display: flex;
+  flex-direction: row;
+  color: #d5d5d5;
+  font-size: 0.75rem;
+}
+
+.top-bar a {
+  color: #d5d5d5;
+}
+
+.top-bar a:hover {
+  color: #fff;
+}
+
+.logo {
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.75);
+}
+
+.logo a:hover {
+  text-decoration: none;
+}
+
+.navi {
+  flex: auto;
+}
+
+.user-panel {
+ min-width: 5rem;
+}
+
 .container {  
-  width: 1000px;
-  padding: 0px 10px;
+  max-width: 950px;
+  padding: 0px 1rem;
   margin: auto;
+}
+
+main {
+  overflow: hidden;
+}
+
+.recent {
+  float: left;
+  width: 700px;
+}
+
+.card {
+  border-radius: 0.25rem;
+  box-sizing: content-box;
   background-color: #fff;
   border: 1px solid #e6e6e6;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hot {
+  width: 220px;
+  float: right;
 }
 
 header {
-  height: 77px;
+  line-height: 4rem;
   background-color: #fff;
   border-bottom: 1px solid rgba(0,0,0,.0975);
-}
-
-main * {
-  box-sizing: border-box;
+  margin-bottom: 2rem;  
 }
 
 footer {
-  color: blue;
+  color: #666;
 }
+
+/* Extra large devices (large desktops, 1200px and up) */
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+  .hot {
+    display: none;
+  }
+}
+
 
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) {
-  .container {  
-    background-color: #99f;
-    width: 768px;
-    padding: 0px 10px;
+  .container {
+    max-width: 628px;
+    padding: 0px 1rem;
+    margin: 0px auto;
   }
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (max-width: 576px) {
-  .container {  
-    background-color: #f99;
-    width: 576px;
-    padding: 0px 10px;
+@media (max-width: 540px) {
+  .container {
+    max-width: 500px;
+    padding: 0px 0rem;
+  }
+
+  .logo {
+    margin-left: 1rem;
+  }
+
+  .card {
+    border-radius: 0;
+    border: 0;
   }
 }
-
-/* Large devices (desktops, 992px and up) */
-/* Extra large devices (large desktops, 1200px and up) */

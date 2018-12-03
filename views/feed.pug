@@ -1,11 +1,22 @@
 extends base.pug
 
 block main
-  div(class='container')
-    - for (var i = 0; i < data.length; i++)
-      p= data[i]['content']
-      p
-        a(href='/status/' + data[i]['id'])= '时间：' + new Date(data[i]['timestamp']).toLocaleString()
-      p
-        a(href='/user/' + data[i]['authorid'])= '作者：' + data[i]['username']
-      hr
+  main(class='container')
+    div(class='recent')
+      h2 最新动态
+      - for (var i = 0; i < data.length; i++)
+        div(class='card')
+          p= data[i]['content']
+          p
+            a(href='/status/' + data[i]['id'])= '时间：' + new Date(data[i]['timestamp']).toLocaleString()
+          p
+            a(href='/user/' + data[i]['authorid'])= '作者：' + data[i]['username']
+    div(class='hot')
+      h2 时下流行
+      - for (var i = 0; i < 5; i++)
+        p= data[i]['content']
+        p
+          a(href='/status/' + data[i]['id'])= '时间：' + new Date(data[i]['timestamp']).toLocaleString()
+        p
+          a(href='/user/' + data[i]['authorid'])= '作者：' + data[i]['username']
+        hr
